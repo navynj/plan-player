@@ -1,0 +1,13 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.imgContainer {
+    border-radius: 0.8rem;
+    background-color: var(--background);
+}
