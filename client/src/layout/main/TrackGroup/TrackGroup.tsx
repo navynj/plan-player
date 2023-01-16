@@ -1,5 +1,5 @@
 function TrackGroup() {
-    return <></>;
+    return <section></section>;
 }
 
 export default TrackGroup;

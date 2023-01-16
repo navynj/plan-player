@@ -1,0 +1,25 @@
+.search {
+    margin-top: 1rem;
+}
+
+.lists {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.list {
+    width: 50%;
+    overflow-x: scroll;
+}
+
+.list:first-child {
+    margin-right: 1rem;
+}
+
+.list > div {
+    display: flex;
+}
+
+.list li {
+    margin-right: 0.2rem;
+}
