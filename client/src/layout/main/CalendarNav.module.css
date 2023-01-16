@@ -1,0 +1,16 @@
+.nav {
+    font-size: 1.2rem;
+}
+
+.nav > * {
+    margin-right: 0.6rem;
+}
+
+.days {
+    display: flex;
+    justify-content: space-between;
+}
+
+.days button {
+    font-weight: 600;
+}

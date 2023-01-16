@@ -28,3 +28,10 @@ button {
     border: 0;
     background-color: transparent;
 }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    font-weight: 800;
+}
