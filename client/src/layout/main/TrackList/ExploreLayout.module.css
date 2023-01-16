@@ -10,10 +10,20 @@
 .list {
     width: 50%;
     overflow-x: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
 }
 
 .list:first-child {
     margin-right: 1rem;
+}
+
+.list > h2 {
+    margin-bottom: 0.5rem;
 }
 
 .list > div {
