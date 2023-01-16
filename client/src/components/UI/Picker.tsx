@@ -1,7 +1,10 @@
+import classes from './Picker.module.css';
+
 function Picker(props: {
     start: number;
     end: number;
     current?: number;
+    isShowArrow?: boolean;
     convert?: (value: number) => string;
     onSelect?: (value: string) => void;
 }) {
@@ -21,7 +24,9 @@ function Picker(props: {
 
     return (
         <select
-            style={{ fontSize: 'inherit' }}
+            className={`bold ${classes.select} ${
+                props.isShowArrow ? classes.arrow : ''
+            }`}
             onChange={changeHandler}
             defaultValue={current}
         >
