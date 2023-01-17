@@ -1,0 +1,87 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.info,
+.controls {
+    display: flex;
+    align-items: center;
+}
+
+.info .title {
+    font-size: 1.3rem;
+}
+
+.info .artist {
+    font-size: 0.8rem;
+}
+
+.info input {
+    display: none;
+}
+
+.info input + .checkbox {
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--extra);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.info input + .checkbox::before {
+    content: '✔';
+    color: #fff;
+    font-size: 0.5rem;
+}
+
+.info input:checked + .checkbox {
+    background-color: var(--primary);
+}
+
+.info .img {
+    flex-shrink: 0;
+    width: 4rem;
+    height: 4rem;
+    margin-right: 1rem;
+    border-radius: 0.6rem;
+    background-color: var(--background);
+}
+
+.controls button {
+    position: relative;
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+}
+
+.controls .play,
+.controls .pause {
+    margin: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls .play::before {
+    content: '▶';
+    transform: translate(0.1rem, 0.1rem);
+}
+
+.controls .pause::before {
+    content: '||';
+    font-size: 0.8rem;
+}
+
+.controls .options {
+    color: var(--primary);
+    background-color: transparent;
+}
