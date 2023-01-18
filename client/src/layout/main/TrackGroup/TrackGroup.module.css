@@ -1,0 +1,12 @@
+.tab {
+    margin-bottom: 1rem;
+}
+
+.tab label {
+    font-size: 1.5rem;
+}
+
+.tab label::before {
+    font-size: 1.2rem;
+    line-height: 0.8rem;
+}
