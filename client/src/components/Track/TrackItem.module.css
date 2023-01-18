@@ -63,25 +63,6 @@
     border-radius: 100%;
 }
 
-.controls .play,
-.controls .pause {
+.controls .play {
     margin: 0 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.controls .play::before {
-    content: '▶';
-    transform: translate(0.1rem, 0.1rem);
-}
-
-.controls .pause::before {
-    content: '||';
-    font-size: 0.8rem;
-}
-
-.controls .options {
-    color: var(--primary);
-    background-color: transparent;
 }
