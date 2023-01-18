@@ -1,3 +1,5 @@
+import Option from '../UI/Option';
+import Play from '../UI/Play';
 import classes from './TrackItem.module.css';
 
 function TrackItem(props: {
@@ -34,8 +36,8 @@ function TrackItem(props: {
                 <div>
                     {formatDigit(hour)}:{formatDigit(min)}:{formatDigit(sec)}
                 </div>
-                <button className={classes.play}></button>
-                <button className={classes.options}>•••</button>
+                <Play className={classes.play} />
+                <Option />
             </div>
         </li>
     );

@@ -1,0 +1,20 @@
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: inherit;
+    border-radius: 100%;
+}
+
+.play::before {
+    content: '▶';
+    transform: translate(0.1rem, 0.1rem);
+}
+
+.pause::before {
+    content: '||';
+    transform: translateY(-0.05rem);
+}
