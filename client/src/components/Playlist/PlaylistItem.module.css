@@ -1,0 +1,35 @@
+.item {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.img {
+    position: relative;
+    flex-shrink: 0;
+    width: 7rem;
+    height: 7rem;
+    margin: 0 1rem;
+    background-color: var(--background);
+    border-radius: 0.6rem;
+}
+
+.img button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+}
+
+.track {
+    flex-grow: 1;
+}
+
+.track h5 {
+    font-size: 1.2rem;
+}
+
+.track li {
+    margin-top: 0.5rem;
+}
