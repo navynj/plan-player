@@ -36,4 +36,12 @@ public class MainController {
         trackRepository.save(trackDB);
         return "redirect:/track";
     }
+
+    @PostMapping("/api/addTrack")
+    public String addtrack(@RequestParam("track") String track) {
+        Main trackDB = new Main();
+        trackDB.setTrackMemo(track);
+        trackRepository.save(trackDB);
+        return "redirect:/";
+    }
 }
