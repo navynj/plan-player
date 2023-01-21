@@ -3,10 +3,7 @@ package MusicProject.Controller;
 
 import MusicProject.Domain.Account;
 import MusicProject.Repository.AccountRepository;
-import MusicProject.Service.SecurityService;
-import MusicProject.Service.TokenService;
-import MusicProject.Service.UserService;
-import MusicProject.Service.accountDetailService;
+import MusicProject.Service.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -30,6 +27,7 @@ public class UserController {
     private final UserService userService;
     private final TokenService tokenService;
     private final SecurityService securityService;
+    private final EmailService emailService;
 
     @Autowired
     private final AccountRepository accountRepository;
@@ -39,13 +37,15 @@ public class UserController {
         return "assignment";
     }
 
-    @GetMapping("/viewConfirmEmail")
-    public String viewConfirmEmail(@Validated @RequestParam String token) {
-
-        userService.confirmEmail(token);
-
+    @PostMapping("/emailConfirm")
+    public String emailConfirm(@RequestParam("userId") String email, Account account) throws Exception {
+        String confirm = emailService.sendSimpleMessage(email);
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        account.setUserPw(passwordEncoder.encode(account.getUserPw()));
+        accountRepository.save(account);
         return "redirect:/";
     }
+
 
     @GetMapping("/login")
     public String login() {

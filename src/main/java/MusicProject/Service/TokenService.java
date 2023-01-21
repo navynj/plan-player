@@ -20,22 +20,6 @@ public class TokenService {
     private final ConfirmationTokenRepository confirmationTokenRepository;
     private final EmailService emailService;
 
-    public String createEmailConfirmationToken(String userId, String receiverEmail) {
-        Assert.hasText(userId, "userId는 필수입니다.");
-        Assert.hasText(receiverEmail, "receiverEmail은 필수입니다.");
-
-        ConfirmationToken confirmationToken = ConfirmationToken.createEmailConfirmationToken(userId);
-        confirmationTokenRepository.save(confirmationToken);
-
-        SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setTo(receiverEmail);
-        mailMessage.setSubject("회원가입 이메일 인증");
-        mailMessage.setText("http://localhost:8080/viewConfirnEmail?token="+confirmationToken.getId());
-        emailService.sendEmail(mailMessage);
-
-        return confirmationToken.getId();
-    }
-
     // 예외처리 다시 공부하기
     public ConfirmationToken findByIdAndExpirationDateAfterAndExpired(String confirmationTokenId) {
 

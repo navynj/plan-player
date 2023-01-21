@@ -24,10 +24,13 @@ spring:
     password: "4163321d~!~!~"
     properties:
       mail:
-        starttls:
-          enable: true
-          required: true
-        auth: true
-        connectiontimeout: 5000
-        timeout: 5000
-        writetimeout: 5000
+        smtp:
+          starttls:
+            enable: true
+            required: true
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+          ssl:
+            enable: true

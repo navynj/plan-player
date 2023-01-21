@@ -6,14 +6,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
-@Service
-@RequiredArgsConstructor
-public class EmailService {
 
-    private final JavaMailSender javaMailSender;
-
-    @Async
-    public void sendEmail(SimpleMailMessage email) {
-        javaMailSender.send(email);
-    }
+public interface EmailService {
+    String sendSimpleMessage(String to) throws Exception;
 }
