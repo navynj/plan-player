@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Account, String> {
-    Account findByUserName(String username);
+    Account findByUserId(String userId);
 }

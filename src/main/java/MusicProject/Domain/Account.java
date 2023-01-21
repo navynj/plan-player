@@ -26,8 +26,10 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
+    @NotNull
     private String userId;
 
+    @NotNull
     private String userPw;
 
     private String userName;

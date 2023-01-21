@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Controller;
 
 import static org.springframework.security.config.Customizer.withDefaults;
@@ -26,8 +27,11 @@ public class SecurityService {
                 .requestMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().permitAll()
                 .and().formLogin().loginPage("/login")
-                .loginProcessingUrl("loginProc")
-                .defaultSuccessUrl("/");
+                .loginProcessingUrl("/loginProc")
+                .defaultSuccessUrl("/")
+                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                .logoutSuccessUrl("/")
+                .invalidateHttpSession(true);
         return http.build();
     }
 

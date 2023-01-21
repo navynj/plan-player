@@ -1,7 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -9,6 +9,7 @@
 <body>
     <a href="/track">todo</a>
     <a href="/assignment">회원가입</a>
-    <a href="/login">로그인</a>
+    <a sec:authorize="isAnonymous()" th:href="@{/login}">로그인</a>
+    <a sec:authorize="isAuthenticated()" th:href="@{/logout}">로그아웃</a>
 </body>
 </html>
