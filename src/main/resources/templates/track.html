@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<h1>Todo App</h1>
+<form method="post" action="/addTrack">
+    <input type="text" name="track" placeholder="할 일을 추가해주세요"/>
+    <input type="submit" value="addTrack"/>
+</form>
+<hr>
+<ul>
+    <li th:each="track:${trackList}">
+        <input type="checkbox" name="track" text=""/>
+        <span th:text="${track.TrackMemo}"></span>
+    </li>
+</ul>
+</html>

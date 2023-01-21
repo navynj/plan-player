@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!doctype html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form name="login" action="/joinProc" method="POST">
+        이름<br>
+        <input type="text" name="userName" placeholder="이름" >
+        <br>
+        이메일<br>
+        <input type="text" name="userId" placeholder="아이디 입력" >
+        <br>
+        비밀번호<br>
+        <input type="text" name="userPw" placeholder="비밀번호를 입력하세요"><br>
+        <br><br>
+        <input type="submit" value="joinProc">
+</form>
+</body>
+</html>
