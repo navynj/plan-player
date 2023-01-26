@@ -1,0 +1,90 @@
+.container {
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info img {
+    width: 14rem;
+    height: 14rem;
+}
+
+.info h1 {
+    text-align: center;
+}
+
+.form {
+    width: 20rem;
+    font-weight: 600;
+}
+
+.errors {
+    color: var(--error);
+    font-weight: 500;;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1.2rem;;
+}
+
+.inputs .field {
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+.inputs input {
+    width: 100%;
+    padding-top: 2rem;
+    display: block;
+}
+
+
+.inputs input + label {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    display: block;
+    color: var(--extra);
+    transition: top 0.3s ease-in-out;
+}
+
+.inputs input:focus + label,
+.inputs input:valid + label {
+    top: 0.5rem;
+    font-size: 0.8rem;
+}
+
+
+
+.form button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+}
+
+.form button[type=submit] {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.links button {
+    padding: 0.5rem 0 ;
+    color: var(--primary);
+    background-color: transparent;
+}
