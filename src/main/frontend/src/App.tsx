@@ -1,24 +1,19 @@
-import classes from './App.module.css';
-import CalendarNav from './layout/main/CalenderNav';
-import TrackGroup from './layout/main/TrackGroup/TrackGroup';
-import TrackList from './layout/main/TrackList/TrackList';
-import Player from './layout/player/Player';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Auth from './layout/Auth';
+import Layout from './layout/Layout';
 
 function App() {
-    return (
-        <div className={classes.container}>
-            <nav>
-                <CalendarNav />
-            </nav>
-            <main className={classes.main}>
-                <div className={classes.sections}>
-                    <TrackList />
-                    <TrackGroup />
-                </div>
-                <Player />
-            </main>
-        </div>
-    );
+    const router = createBrowserRouter([
+        {
+            path: '/',
+            element: <Layout />,
+        },
+        {
+            path: '/auth',
+            element: <Auth />,
+        },
+    ]);
+    return <RouterProvider router={router} />;
 }
 
 export default App;
