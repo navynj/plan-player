@@ -1,12 +1,25 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { userActions } from '../store/user';
 import classes from './Auth.module.css';
 
 function Auth() {
+    const navigation = useNavigate();
+    const dispatch = useDispatch();
+
     const usernameRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
 
     const [isLoginMode, setIsLoginMode] = useState(true);
 
+    // Auth check
+    const auth = useSelector((state: any) => state.user.isAuthenticated);
+    if (auth) {
+        navigation('/', { replace: true });
+    }
+
+    // Autofocus
     useEffect(() => {
         usernameRef.current!.focus();
     }, [usernameRef, isLoginMode]);
@@ -20,6 +33,8 @@ function Auth() {
         const enteredUsername = usernameRef.current!.value;
         const enteredPassword = passwordRef.current!.value;
         console.log(enteredUsername, enteredPassword);
+        dispatch(userActions.login());
+        navigation('/', { replace: true });
     };
 
     return (
